@@ -1,6 +1,6 @@
-// src/StringCalculator.js
 import React, { useState } from 'react';
-import { add } from './stringCalculator'; // Import your add function
+import { add } from './stringCalculator';
+import './App.css'; // Import your CSS file
 
 const App = () => {
     const [input, setInput] = useState('');
@@ -16,16 +16,20 @@ const App = () => {
     };
 
     return (
-        <div>
-            <input
-                id="input"
-                type="text"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-            />
-            <button id="calculate" onClick={handleCalculate}>
-                Add
-            </button>
+        <div className="container"> {/* Main container */}
+            <h1>String Calculator App</h1> {/* Main heading */}
+            <div className="input-section"> {/* Input section for alignment */}
+                <label htmlFor="input">Enter numbers :</label>
+                <input
+                    id="input"
+                    type="text"
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                />
+                <button id="calculate" onClick={handleCalculate}>
+                    Add
+                </button>
+            </div>
             <div id="result">{result}</div>
         </div>
     );

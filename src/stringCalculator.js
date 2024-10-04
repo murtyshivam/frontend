@@ -1,13 +1,13 @@
-// src/stringCalculator.js
+
 export function add(numbers) {
-    if (numbers === "") return 0; // Handle empty string case
+    if (numbers === "") return 0; 
 
     let delimiters = /[\n,]+/; // Default delimiters
     if (numbers.startsWith("//")) {
         const parts = numbers.split('\n');
-        const delimiter = parts[0].slice(2); // Extract custom delimiter
-        numbers = parts[1]; // The part after the delimiter line
-        delimiters = new RegExp(`[${delimiter}\n]+`); // Create a regex with the custom delimiter
+        const delimiter = parts[0].slice(2); 
+        numbers = parts[1]; 
+        delimiters = new RegExp(`[${delimiter}\n]+`); 
     }
 
     const numberArray = numbers.split(delimiters).map(num => {
